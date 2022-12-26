@@ -16,6 +16,7 @@ export default async function getWeatherInfo(lat, lon, timezone) {
       return data;
       return {
         current: getCurrentData(data),
+        daily: getDailyData(data)
       };
     });
 }
@@ -42,7 +43,16 @@ function getCurrentData({ current_weather, daily }) {
     sunrise: sunrise[0],
     sunset: sunset[0],
     precip: precip[0],
-    weatherIcon: weathercode
-  }
+    weatherIcon: weathercode,
+  };
+}
 
+function getDailyData({daily}){
+  return daily.time.map((time, index) => {
+    return {
+      time: time*1000,
+      weatherIcon: daily.weathercode[index],
+      maxTemp: daily.temperature_2m_max[index],
+    }
+  })
 }
