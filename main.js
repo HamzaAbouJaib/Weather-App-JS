@@ -1,16 +1,35 @@
-import getWeatherInfo from './weatherInfo'
+import getWeatherData from "./weatherInfo";
+
+const ICON_MAP = new Map();
 
 navigator.geolocation.getCurrentPosition(positionSuccess, () => {});
 
 function positionSuccess({ coords }) {
-    getWeatherInfo(
+  getWeatherData(
     coords.latitude,
     coords.longitude,
     Intl.DateTimeFormat().resolvedOptions().timeZone
   )
-    .then(data => console.log(data))
+    .then((data) => renderWeatherData(data))
     .catch((e) => {
       console.error(e);
       alert("Error: " + e.message);
     });
+}
+
+function renderWeatherData({ current, daily, hourly }) {
+  renderCurrentData(current);
+  // renderDailyData(daily)
+  // renderHourlyData(hourly)
+  document.body.classList.remove("blurred");
+}
+
+function getIcon(iconCode) {
+  return `public/${ICON_MAP.get(iconCode)}.svg`;
+}
+
+function renderCurrentData(current) {
+  document.querySelector("[data-current-icon]").src = getIcon(
+    current.weatherIcon
+  );
 }
