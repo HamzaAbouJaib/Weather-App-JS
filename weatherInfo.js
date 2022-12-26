@@ -54,7 +54,7 @@ function getDailyData({ daily }) {
       weatherIcon: daily.weathercode[index],
       maxTemp: daily.temperature_2m_max[index],
     };
-  });
+  }).slice(1, 7);
 }
 
 function getHourlyData({ hourly, current_weather }) {
