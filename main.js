@@ -19,7 +19,7 @@ function positionSuccess({ coords }) {
 function renderWeatherData({ current, daily, hourly }) {
   renderCurrentData(current);
   renderDailyData(daily);
-  // renderHourlyData(hourly)
+  renderHourlyData(hourly)
   document.body.classList.remove("blurred");
 }
 
@@ -71,4 +71,8 @@ function renderDailyData(daily) {
     setData("day", formatDay(day.time), dayInfo);
     dailySection.append(dayInfo)
   });
+}
+
+function renderHourlyData(hourly) {
+
 }

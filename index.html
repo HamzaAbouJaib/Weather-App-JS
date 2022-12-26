@@ -301,49 +301,49 @@
   <template id="day-info-template">
     <div class="day-info">
       <img class="weather-icon" src="/cloud-bolt.svg" data-weather-icon>
-      <div class="day-info-date" data-day>Monday</div>
-      <div><span data-temp>30</span>&deg;C</div>
+      <div class="day-info-date" data-day></div>
+      <div><span data-temp></span>&deg;C</div>
     </div>
   </template>
   <template id="hour-info-template">
     <tr class="hour-info">
       <td>
         <div class="info-group">
-          <div class="day-info-date">Monday</div>
-          <div>4 PM</div>
+          <div class="day-info-date" data-hourly-day>Monday</div>
+          <div data-hour>4 PM</div>
         </div>
       </td>
       <td>
-        <img class="weather-icon" src="/cloud-bolt.svg">
+        <img class="weather-icon" src="/cloud-bolt.svg" data-hourly-icon>
       </td>
       <td>
         <div class="info-group">
           <div class="day-info-date">Temp</div>
-          <div>30&deg;C</div>
+          <div><span data-hourly-temp></span>&deg;C</div>
         </div>
       </td>
       <td>
         <div class="info-group">
           <div class="day-info-date">FL Temp</div>
-          <div>30&deg;C</div>
+          <div><span data-hourly-fl-temp></span>&deg;C</div>
         </div>
       </td>
       <td>
         <div class="info-group">
           <div class="day-info-date">Wind</div>
-          <div>6<span> km/h</span></div>
+          <div><span data-hourly-wind></span> km/h</div>
         </div>
       </td>
       <td>
         <div class="info-group">
           <div class="day-info-date">Precip</div>
-          <div>1<span> mm</span></div>
+          <div><span data-hourly-precip></span> mm</div>
         </div>
       </td>
       <td>
         <div class="info-group">
           <div class="day-info-date">Visibility</div>
-          <div>10245<span> m</span></div>
+          <div><span data-hourly-visibility></span> m</div>
         </div>
       </td>
     </tr>
