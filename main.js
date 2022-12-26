@@ -74,5 +74,20 @@ function renderDailyData(daily) {
 }
 
 function renderHourlyData(hourly) {
+  const hourlySection = document.querySelector("[data-hourly]")
+  const hourInfoTemplate = document.querySelector("#hour-info-template");
 
+  hourlySection.innerHTML = ""
+  hourly.forEach(hour => {
+    const hourInfo = hourInfoTemplate.content.cloneNode(true)
+    hourInfo.querySelector("[data-hourly-icon]").src = getIcon(hour.weatherIcon)
+    setData("hourly-day", formatDay(hour.time), hourInfo)
+    setData("hour", formatTime(hour.time), hourInfo)
+    setData("hourly-temp", hour.temp, hourInfo)
+    setData("hourly-fl-temp", hour.FLTemp, hourInfo)
+    setData("hourly-wind", hour.windSpeed, hourInfo)
+    setData("hourly-precip", hour.precip, hourInfo)
+    setData("hourly-visibility", hour.visibility, hourInfo)
+    hourlySection.append(hourInfo)
+  })
 }
