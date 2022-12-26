@@ -1,4 +1,4 @@
-export default ICON_MAP = new Map();
+export const ICON_MAP = new Map();
 
 addMapping([0, 1], "sun");
 addMapping([2], "cloud-sun");

@@ -1,6 +1,5 @@
 import getWeatherData from "./weatherInfo";
-
-const ICON_MAP = new Map();
+import {ICON_MAP} from './weatherIconMap';
 
 navigator.geolocation.getCurrentPosition(positionSuccess, () => {});
 
@@ -32,4 +31,5 @@ function renderCurrentData(current) {
   document.querySelector("[data-current-icon]").src = getIcon(
     current.weatherIcon
   );
+  
 }
