@@ -101,3 +101,23 @@ body {
 .day-info-date {
   font-size: 1.1rem;
 }
+
+.hourly {
+  width: 80%;
+  text-align: center;
+  border-spacing: 0;
+  margin: 4rem auto 0;
+  border: 1px solid hsl(200, 100%, 20%)
+}
+
+.hour-info {
+  background-color: hsl(200, 100%, 90%);
+}
+
+.hour-info:nth-child(2n){
+  background-color: transparent;
+}
+
+.hour-info .info-group {
+  background-color: transparent;
+}
