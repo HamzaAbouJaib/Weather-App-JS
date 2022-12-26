@@ -13,10 +13,10 @@ export default async function getWeatherInfo(lat, lon, timezone) {
       },
     })
     .then(({ data }) => {
-      return data;
       return {
         current: getCurrentData(data),
-        daily: getDailyData(data)
+        daily: getDailyData(data),
+        hourly: getHourlyData(data),
       };
     });
 }
@@ -47,12 +47,28 @@ function getCurrentData({ current_weather, daily }) {
   };
 }
 
-function getDailyData({daily}){
+function getDailyData({ daily }) {
   return daily.time.map((time, index) => {
     return {
-      time: time*1000,
+      time: time * 1000,
       weatherIcon: daily.weathercode[index],
       maxTemp: daily.temperature_2m_max[index],
-    }
-  })
+    };
+  });
+}
+
+function getHourlyData({ hourly, current_weather }) {
+  return hourly.time
+    .map((time, index) => {
+      return {
+        time: time * 1000,
+        FLTemp: hourly.apparent_temperature[index],
+        precip: hourly.precipitation[index],
+        temp: hourly.temperature_2m[index],
+        visibility: hourly.visibility[index],
+        windSpeed: hourly.windspeed_10m[index],
+        weatherIcon: hourly.weathercode[index],
+      };
+    })
+    .filter(({ time }) => time >= current_weather.time * 1000).slice(0, 51)
 }
