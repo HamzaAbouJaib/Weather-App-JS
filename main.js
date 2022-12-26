@@ -1,7 +1,7 @@
 import getWeatherData from "./weatherInfo";
 import { ICON_MAP } from "./weatherIconMap";
 
-navigator.geolocation.getCurrentPosition(positionSuccess, () => {});
+navigator.geolocation.getCurrentPosition(positionSuccess, positionError);
 
 function positionSuccess({ coords }) {
   getWeatherData(
@@ -11,9 +11,14 @@ function positionSuccess({ coords }) {
   )
     .then((data) => renderWeatherData(data))
     .catch((e) => {
-      console.error(e);
       alert("Error: " + e.message);
     });
+}
+
+function positionError({ coords }) {
+  alert(
+    "There was an error getting your location. Please allow us to use your location and refresh the page."
+  );
 }
 
 function renderWeatherData({ current, daily, hourly }) {
