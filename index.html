@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+</head>
+
+<body>
+  <div class="top-container">
     <section class="current" data-current-temp>
-      <div class="current-container">
         <div class="current-top">
-        <img class="weather-icon large" src="public/cloud.svg">
-        <div class="current-temp"><span>32</span>&deg;C</div>
+          <img class="weather-icon large" src="public/cloud.svg">
+          <div class="current-temp"><span>32</span>&deg;C</div>
+        </div>
+        <div class="current-bottom">
+          <div class="info-group">
+            <div class="label">High</div>
+            <div class="label-value"><span data-current-high>33</span>&deg;C</div>
+          </div>
+          <div class="info-group">
+            <div class="label">Low</div>
+            <div class="label-value"><span data-current-high>29</span>&deg;C</div>
+          </div>
+          <div class="info-group">
+            <div class="label">FL High</div>
+            <div class="label-value"><span data-current-high>35</span>&deg;C</div>
+          </div>
+          <div class="info-group">
+            <div class="label">FL Low</div>
+            <div class="label-value"><span data-current-high>28</span>&deg;C</div>
+          </div>
+          <div class="info-group">
+            <div class="label">Wind</div>
+            <div class="label-value"><span data-current-high>12</span> km/h</div>
+          </div>
+          <div class="info-group">
+            <div class="label">Precip</div>
+            <div class="label-value"><span data-current-high>15</span> mm</div>
+          </div>
+          <div class="info-group">
+            <div class="label">Sunrise</div>
+            <div class="label-value"><span data-current-high>6:56</span> AM</div>
+          </div>
+          <div class="info-group">
+            <div class="label">Sunset</div>
+            <div class="label-value"><span data-current-high>5:40</span> PM</div>
+          </div>
       </div>
-      <div class="current-bottom">
-        <div class="info-group">
-          <div class="label">High</div>
-          <div class="label-value"><span data-current-high>33</span>&deg;C</div>
-        </div>
-        <div class="info-group">
-          <div class="label">Low</div>
-          <div class="label-value"><span data-current-high>29</span>&deg;C</div>
-        </div>
-        <div class="info-group">
-          <div class="label">FL High</div>
-          <div class="label-value"><span data-current-high>35</span>&deg;C</div>
-        </div>
-        <div class="info-group">
-          <div class="label">FL Low</div>
-          <div class="label-value"><span data-current-high>28</span>&deg;C</div>
-        </div>
-        <div class="info-group">
-          <div class="label">Wind</div>
-          <div class="label-value"><span data-current-high>12</span> km/h</div>
-        </div>
-        <div class="info-group">
-          <div class="label">Precip</div>
-          <div class="label-value"><span data-current-high>15</span> mm</div>
-        </div>
-        <div class="info-group">
-          <div class="label">Sunrise</div>
-          <div class="label-value"><span data-current-high>6:56</span> AM</div>
-        </div>
-        <div class="info-group">
-          <div class="label">Sunset</div>
-          <div class="label-value"><span data-current-high>5:40</span> PM</div>
-        </div>
-      </div>
-      </div>
-      
+
     </section>
-    <section class="next-days">
+    <section class="next-days" data-next-days>
       <div class="day-info">
         <img class="weather-icon" src="public/cloud-bolt.svg">
         <div class="day-info-date">Monday</div>
@@ -82,6 +83,9 @@
         <div>30&deg;C</div>
       </div>
     </section>
-    <script type="module" src="/main.js"></script>
-  </body>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>

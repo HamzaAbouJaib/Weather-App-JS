@@ -12,18 +12,21 @@ body {
   padding: 4rem;
 }
 
-.current {
+.top-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.top-container > section {
   width: 50%;
+  justify-self: center;
+}
+
+.current {
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.current-container {
   background-color: hsl(200, 100%, 10%);
-  width: max-content;
   padding: 2rem;
   border: 2px solid hsl(200, 100%, 5%);
   border-radius: 1rem;
@@ -71,4 +74,30 @@ body {
 
 .label {
   text-transform: uppercase;
+}
+
+.next-days {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.day-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 8rem;
+  border: 1px solid hsl(200, 100%, 20%);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.day-info .weather-icon {
+  margin-bottom: 0.25rem;
+}
+
+.day-info-date {
+  font-size: 1.1rem;
 }
