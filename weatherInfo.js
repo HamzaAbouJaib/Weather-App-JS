@@ -40,8 +40,8 @@ function getCurrentData({ current_weather, daily }) {
     FLHigh: FLHigh[0],
     FLLow: FLLow[0],
     windSpeed: windspeed,
-    sunrise: sunrise[0],
-    sunset: sunset[0],
+    sunrise: sunrise[0] * 1000,
+    sunset: sunset[0] * 1000,
     precip: precip[0],
     weatherIcon: weathercode,
   };
@@ -70,5 +70,6 @@ function getHourlyData({ hourly, current_weather }) {
         weatherIcon: hourly.weathercode[index],
       };
     })
-    .filter(({ time }) => time >= current_weather.time * 1000).slice(0, 51)
+    .filter(({ time }) => time >= current_weather.time * 1000)
+    .slice(0, 51);
 }
