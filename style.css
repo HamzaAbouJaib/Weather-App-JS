@@ -12,6 +12,11 @@ body {
   padding: 4rem;
 }
 
+.blurred {
+  filter: blur(4px);
+  overflow: hidden;
+}
+
 .top-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -120,4 +125,8 @@ body {
 
 .hour-info .info-group {
   background-color: transparent;
+}
+
+.hour-info .day-info-date {
+  font-size: 1.1rem;
 }
