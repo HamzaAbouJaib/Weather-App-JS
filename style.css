@@ -20,10 +20,11 @@ body {
 .top-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 
 .top-container > section {
-  width: 50%;
+  /* width: 50%; */
   justify-self: center;
 }
 
@@ -68,10 +69,7 @@ body {
 }
 
 .info-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
+  text-align: center;
   background-color: hsl(200, 100%, 20%);
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -79,6 +77,7 @@ body {
 
 .label {
   text-transform: uppercase;
+  margin-bottom: 0.25rem;
 }
 
 .next-days {
@@ -86,7 +85,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   align-items: center;
-  column-gap: 2rem;
+  gap: 2rem;
 }
 
 .day-info {
@@ -112,14 +111,14 @@ body {
   text-align: center;
   border-spacing: 0;
   margin: 4rem auto 0;
-  border: 1px solid hsl(200, 100%, 20%)
+  border: 1px solid hsl(200, 100%, 20%);
 }
 
 .hour-info {
   background-color: hsl(200, 100%, 90%);
 }
 
-.hour-info:nth-child(2n){
+.hour-info:nth-child(2n) {
   background-color: transparent;
 }
 
@@ -130,3 +129,51 @@ body {
 .hour-info .day-info-date {
   font-size: 1.1rem;
 }
+
+@media screen and (max-width: 1800px) {
+  .current-bottom {
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media screen and (max-width: 1540px) {
+  .current-bottom {
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(2, auto);
+  }
+  .large {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .top-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .next-days {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .hour-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 0.5rem;
+  }
+
+  .hour-info > :last-child {
+    display: none;
+  }
+}
+
+
